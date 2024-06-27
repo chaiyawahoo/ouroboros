@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dui8pllp21gux"]
+
+[ext_resource type="SpriteFrames" uid="uid://c6mwfwth5eoxw" path="res://art/spritesheets/hero_sprite_frames.tres" id="1_6hm42"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_ir3se"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrweb"]
+size = Vector2(18, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifvmk"]
+size = Vector2(18, 26)
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_ir3se")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -5)
+sprite_frames = ExtResource("1_6hm42")
+animation = &"attack"
+autoplay = "idle"
+
+[node name="FeetCollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_rrweb")
+
+[node name="BodyCollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ifvmk")
+
+[node name="Camera2D" type="Camera2D" parent="."]
