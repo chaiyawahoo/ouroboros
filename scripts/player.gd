@@ -20,7 +20,6 @@ func _input(_event: InputEvent) -> void:
 		sprite.play("attack")
 		track_attack_animation_finished()
 
-
 func _process(_delta: float) -> void:
 	if is_dead or is_attacking:
 		return
@@ -42,7 +41,6 @@ func _process(_delta: float) -> void:
 		is_dead = true
 		sprite.play("death")
 
-
 func _physics_process(_delta: float) -> void:
 	if is_dead or is_attacking:
 		return 
@@ -61,7 +59,7 @@ func track_attack_animation_finished() -> void:
 	is_attacking = false
 	$Weapon.monitoring = false
 
-func take_damage(incoming_damage: int):
+func take_damage(incoming_damage: int) -> void:
 	# if health > 0:
 	# 	health -= incoming_damage
 	# print(health)

@@ -7,7 +7,7 @@ var damage := 1
 var is_dead := false
 var player: Player
 
-func _physics_process(_delta):
+func _physics_process(_delta) -> void:
 	if player is Player:
 		var target = Vector2(player.position.x - position.x, player.position.y - position.y)
 		
@@ -19,10 +19,10 @@ func _physics_process(_delta):
 			if collider is Player:
 				collider.take_damage(damage)
 
-func update_target_node(_player: Player):
+func update_target_node(_player: Player) -> void:
 	if _player is Player:
 		player = _player
 
-func take_player_damage(incoming_damage: int):
+func take_player_damage(incoming_damage: int) -> void:
 	health -= incoming_damage
 	print("enemy health ", health)
