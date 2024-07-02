@@ -27,8 +27,10 @@ func _process(_delta: float) -> void:
 	
 	if move_input.x < 0:
 		sprite.flip_h = true
+		$Weapon.position.x = -15
 	elif move_input.x > 0:
 		sprite.flip_h = false
+		$Weapon.position.x = 15
 	
 	if move_input.length() > 0:
 		sprite.play("walk")
