@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dui8pllp21gux"]
+[gd_scene load_steps=6 format=3 uid="uid://dui8pllp21gux"]
 
 [ext_resource type="SpriteFrames" uid="uid://c6mwfwth5eoxw" path="res://art/spritesheets/hero_sprite_frames.tres" id="1_6hm42"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ir3se"]
+[ext_resource type="PackedScene" uid="uid://c0ao6fboa5hty" path="res://scenes/weapon.tscn" id="3_et7hh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rrweb"]
 size = Vector2(18, 13)
@@ -27,3 +28,5 @@ shape = SubResource("RectangleShape2D_rrweb")
 shape = SubResource("RectangleShape2D_ifvmk")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Weapon" parent="." instance=ExtResource("3_et7hh")]

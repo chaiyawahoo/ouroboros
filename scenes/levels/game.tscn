@@ -1,13 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://bpye2p7d2ya7k"]
+[gd_scene load_steps=5 format=3 uid="uid://bpye2p7d2ya7k"]
 
+[ext_resource type="Script" path="res://scenes/levels/game.gd" id="1_chog0"]
 [ext_resource type="PackedScene" uid="uid://dui8pllp21gux" path="res://scenes/player.tscn" id="1_ffvve"]
 [ext_resource type="Texture2D" uid="uid://be0oa8bi5o535" path="res://art/tiles/stripes.png" id="1_qv3sv"]
+[ext_resource type="PackedScene" uid="uid://dhtluq7fx1ibk" path="res://scenes/enemy.tscn" id="3_1862b"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_chog0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(102, 69)
 texture = ExtResource("1_qv3sv")
 
 [node name="Player" parent="." instance=ExtResource("1_ffvve")]
+unique_name_in_owner = true
 position = Vector2(128, 72)
+collision_layer = 3
+
+[node name="Enemy" parent="." instance=ExtResource("3_1862b")]
+unique_name_in_owner = true
+position = Vector2(169, 9)
+
+[node name="Enemy2" parent="." instance=ExtResource("3_1862b")]
+unique_name_in_owner = true
+position = Vector2(168, 26)

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0ao6fboa5hty"]
+
+[ext_resource type="Script" path="res://scenes/weapon.gd" id="1_62b8m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4pnl"]
+size = Vector2(12, 32)
+
+[node name="Weapon" type="Area2D"]
+unique_name_in_owner = true
+position = Vector2(15, 0)
+monitoring = false
+script = ExtResource("1_62b8m")
+metadata/_edit_group_ = true
+
+[node name="WeaponCollider" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_a4pnl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
